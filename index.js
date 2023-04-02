@@ -29,9 +29,35 @@ inquirer
 .prompt([
 {
     type: 'input',
+    name: 'title',
+    message: 'What is the name of your project?',
+},
+{
+    type: 'input',
     name: 'description',
     message: 'What is your project about?'
 },
+{
+    type: 'input',
+    name: 'installation',
+    message: 'Describe installation procedure or write N/A if not applicable.'
+},
+{
+    type: 'input',
+    name: 'usage',
+    messag: 'Describe the usage features of your project.',
+},
+{
+    type: 'input',
+    name: 'contributing',
+    message: 'List out any contributing sites or sources you used.'
+},
+{
+    type: 'input',
+    name: 'tests',
+    messag: 'Provide code examples and how to run them in this section, if applicable.',
+},
+
 ])
 .then((answer) => {
     const readMeContent = generateReadMe(answers);
