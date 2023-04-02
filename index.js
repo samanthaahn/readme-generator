@@ -1,4 +1,4 @@
-const inquirer = required('inquirer');
+const inquirer = require('inquirer');
 const fs = require('fs');
 
 const generateReadMe = ({ title, description, installation, usage, contributing, tests, license }) => 
@@ -44,7 +44,7 @@ inquirer
 },
 {
     type: 'input',
-    name: 'usage',
+    name: 'Usage',
     messag: 'Describe the usage features of your project.',
 },
 {
@@ -59,20 +59,16 @@ inquirer
 },
 
 ])
-.then((answer) => {
+.then((answers) => {
     const readMeContent = generateReadMe(answers);
 
     fs.writeFile('readme.md', readMeContent, (err) =>
-    err ? console.log(err) : console.log('Successfully created read.me file!')
+    err ? console.log(err) : console.log('Successfully created readme.md file!')
     );
 });
 
 
-// // TODO: Create an array of questions for user input
-// const questions = [];
 
-// // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
 
 // // TODO: Create a function to initialize app
 // function init() {}
