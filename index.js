@@ -105,7 +105,7 @@ switch (answers.license) {
         licenseBadges = '';
 }
 
-    fs.writeFile('/dist/readme.md', readMeContent, (err) =>
+    fs.writeFile('/dist/readme.md', Buffer.from(readMeContent), 'utf8', (err) =>
     err ? console.log(err) : console.log('Successfully created readme.md file!')
     );
 });
