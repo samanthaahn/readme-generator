@@ -90,21 +90,6 @@ choices: ['MIT', 'Apache', 'BSD'],
 
     const readMeContent = generateReadMe(answers);
 
-    let licenseBadges;
-switch (answers.license) {
-    case 'MIT':
-        licenseBadges = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
-        break;
-    case 'Apache':
-        licenseBadges = '[![License: Apache](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
-        break;
-    case 'BSD':
-        licenseBadges = '[![License: BSD](https://img.shields.io/badge/License-BSD%203--Clause-orange.svg)](https://opensource.org/licenses/BSD-3-Clause)';
-        break;
-    default:
-        licenseBadges = '';
-}
-
     fs.writeFile('/dist/readme.md', Buffer.from(readMeContent), 'utf8', (err) =>
     err ? console.log(err) : console.log('Successfully created readme.md file!')
     );
