@@ -1,9 +1,9 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require('./generateMarkdown');
 
 
-inquirer
-.prompt([
+const questions = [
 {
     type: 'input',
     name: 'title',
@@ -38,7 +38,7 @@ inquirer
 type: 'list',
 name: 'license',
 message: 'Which license would you like to use for your project?',
-choices: ['MIT', 'Apache', 'BSD'],
+choices: ['MIT', 'Apache', 'ISC', 'None'],
 },
 {
     type: 'input',
@@ -55,16 +55,18 @@ choices: ['MIT', 'Apache', 'BSD'],
     name: 'githubLink',
     message: 'Please enter the link to your GitHub:'
 },
-])
+];
 
-.then((answers) => {
+inquirer.createPromptModule(questions)
+.then(answers => {
 
-    const readMeContent = generateReadMe(answers);
+    const markdown = generateMarkdown(answers);
 
-    fs.writeFile('/dist/readme.md', Buffer.from(readMeContent), 'utf8', (err) =>
+    fs.writeFile('/dist/readme.md', markdown, (err) =>
     err ? console.log(err) : console.log('Successfully created readme.md file!')
     );
 });
+
 
 
 

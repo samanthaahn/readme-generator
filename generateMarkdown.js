@@ -83,7 +83,7 @@ ${data.tests}
 The license used for the project was: ${license}
 
 ## Questions
-If there are any questions regarding this project, repo, or issues, you can go to my GitHub profile: ${githubLink}. You can also search me up by my username: ${githubUsername}, and/or email me at: ${githubEmail}.
+If there are any questions regarding this project, repo, or issues, you can go to my GitHub profile: ${data.githubLink}. You can also search me up by my username: ${data.githubUsername}, and/or email me at: ${data.githubEmail}.
 `;
 };
 
