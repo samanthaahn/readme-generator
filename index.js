@@ -1,7 +1,8 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-const generateReadMe = ({ title, description, installation, usage, contributing, tests, license, licenseBadges, githubUsername, githubEmail, githubLink }) => 
+const generateReadMe = (answers) => {
+    const { title, description, installation, usage, contributing, tests, license, licenseBadges, githubUsername, githubEmail, githubLink } = answers;  
 
 `# ${title}
 
@@ -28,6 +29,7 @@ The license used for the project was: ${license}
 ## Questions
 If there are any questions regarding this project, repo, or issues, you can go to my GitHub profile: ${githubLink}. You can also search me up by my username: ${githubUsername}, and/or email me at: ${githubEmail}.
 `;
+};
 
 inquirer
 .prompt([
@@ -89,7 +91,7 @@ choices: ['MIT', 'Apache', 'BSD'],
     const readMeContent = generateReadMe(answers);
 
     let licenseBadges;
-switch (license) {
+switch (answers.license) {
     case 'MIT':
         licenseBadges = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
         break;
