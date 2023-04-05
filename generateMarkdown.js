@@ -56,36 +56,28 @@ This project uses the licese [${license}](${link}).`;
 
 function generateMarkdown(data) {
 
+    const licenseSection = renderLicenseSection(data.license);    
+const licenseBadge = renderLicenseBadge(data.license);
 
 
+return `# ${data.title}
 
-
-
-
-
-}
-
-const generateReadMe = (answers) => {
-    const { title, description, installation, usage, contributing, tests, license, licenseBadges, githubUsername, githubEmail, githubLink } = answers;  
-
-`# ${title}
-
-${licenseBadges}
+${licenseBadge}
 
 ## Description
-${description}
+${data.description}
 
 ## Installation
-${installation}
+${data.installation}
 
 ## Usage
-${usage}
+${data.usage}
 
 ## Contributing
-${contributing}
+${data.contributing}
 
 ## Tests
-${tests}
+${data.tests}
 
 ## License
 The license used for the project was: ${license}
@@ -94,3 +86,5 @@ The license used for the project was: ${license}
 If there are any questions regarding this project, repo, or issues, you can go to my GitHub profile: ${githubLink}. You can also search me up by my username: ${githubUsername}, and/or email me at: ${githubEmail}.
 `;
 };
+
+module.exports = generateMarkdown; 
