@@ -80,7 +80,7 @@ ${data.contributing}
 ${data.tests}
 
 ## License
-The license used for the project was: ${license}
+The license used for the project was: ${data.license}
 
 ## Questions
 If there are any questions regarding this project, repo, or issues, you can go to my GitHub profile: ${data.githubLink}. You can also search me up by my username: ${data.githubUsername}, and/or email me at: ${data.githubEmail}.

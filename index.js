@@ -62,7 +62,7 @@ inquirer.prompt(questions)
 
     const markdown = generateMarkdown(answers);
 
-    fs.writeFile('/dist/readme.md', markdown, (err) =>
+    fs.writeFile('./dist/readme.md', markdown, (err) =>
     err ? console.log(err) : console.log('Successfully created readme.md file!')
     );
 });
