@@ -1,35 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-const generateReadMe = (answers) => {
-    const { title, description, installation, usage, contributing, tests, license, licenseBadges, githubUsername, githubEmail, githubLink } = answers;  
-
-`# ${title}
-
-${licenseBadges}
-
-## Description
-${description}
-
-## Installation
-${installation}
-
-## Usage
-${usage}
-
-## Contributing
-${contributing}
-
-## Tests
-${tests}
-
-## License
-The license used for the project was: ${license}
-
-## Questions
-If there are any questions regarding this project, repo, or issues, you can go to my GitHub profile: ${githubLink}. You can also search me up by my username: ${githubUsername}, and/or email me at: ${githubEmail}.
-`;
-};
 
 inquirer
 .prompt([
