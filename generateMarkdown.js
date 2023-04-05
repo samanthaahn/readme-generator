@@ -43,3 +43,13 @@ switch (license) {
 }
 return link; 
 }
+
+function renderLicenseSection(license) {
+if (!license || license === 'None') {
+    return `## License
+    This project does not have a license.`;
+}
+const link = renderLicenseLink(license);
+return `## License
+This project uses the licese [${license}](${link}).`;
+}
