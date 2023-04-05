@@ -4,7 +4,7 @@ if (!license) {
 }
 
 let licenseBadges;
-switch (answers.license) {
+switch (license) {
     case 'MIT':
         licenseBadges = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
         break;
@@ -16,6 +16,8 @@ switch (answers.license) {
         break;
     default:
         licenseBadges = '';
+        break; 
 }
-
+return licenseBadges;
 };
+
