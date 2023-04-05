@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-const generateReadMe = ({ title, description, installation, usage, contributing, tests, license }) => 
+const generateReadMe = ({ title, description, installation, usage, contributing, tests, license, githubUsername, githubEmail, githubLink }) => 
 
 `# ${title}
 
@@ -21,7 +21,11 @@ ${contributing}
 ${tests}
 
 ## License
-${license}`;
+The license used for the project was: ${license}
+
+## Questions
+If there are any questions regarding this project, repo, or issues, you can go to my GitHub profile: ${githubLink}. You can also search me up by my username: ${githubUsername}, and/or email me at: ${githubEmail}.
+`;
 
 
 
@@ -65,18 +69,18 @@ choices: ['MIT', 'Apache', 'BSD'],
 },
 {
     type: 'input',
-    name:
-    message:
+    name: 'githubUsername',
+    message: 'Please enter your GitHub user name:',
 },
 {
     type: 'input',
-    name:
-    message:
+    name: 'githubEmail',
+    message:'Please enter your GitHub email:',
 },
 {
     type: 'input',
-    name:
-    message:
+    name: 'githubLink',
+    message: 'Please enter the link to your GitHub:'
 },
 ])
 
