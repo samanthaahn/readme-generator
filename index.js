@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-const generateReadMe = ({ title, description, installation, usage, contributing, tests, license, githubUsername, githubEmail, githubLink }) => 
+const generateReadMe = ({ title, description, installation, usage, contributing, tests, license, licenseBadges, githubUsername, githubEmail, githubLink }) => 
 
 `# ${title}
 
@@ -28,21 +28,6 @@ The license used for the project was: ${license}
 ## Questions
 If there are any questions regarding this project, repo, or issues, you can go to my GitHub profile: ${githubLink}. You can also search me up by my username: ${githubUsername}, and/or email me at: ${githubEmail}.
 `;
-
-let licenseBadges;
-switch (license) {
-    case 'MIT':
-        licenseBadges = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
-        break;
-    case 'Apache':
-        licenseBadges = '[![License: Apache](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
-        break;
-    case 'BSD':
-        licenseBadges = '[![License: BSD](https://img.shields.io/badge/License-BSD%203--Clause-orange.svg)](https://opensource.org/licenses/BSD-3-Clause)';
-        break;
-    default:
-        licenseBadges = '';
-}
 
 inquirer
 .prompt([
@@ -100,7 +85,23 @@ choices: ['MIT', 'Apache', 'BSD'],
 ])
 
 .then((answers) => {
+
     const readMeContent = generateReadMe(answers);
+
+    let licenseBadges;
+switch (license) {
+    case 'MIT':
+        licenseBadges = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
+        break;
+    case 'Apache':
+        licenseBadges = '[![License: Apache](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
+        break;
+    case 'BSD':
+        licenseBadges = '[![License: BSD](https://img.shields.io/badge/License-BSD%203--Clause-orange.svg)](https://opensource.org/licenses/BSD-3-Clause)';
+        break;
+    default:
+        licenseBadges = '';
+}
 
     fs.writeFile('/dist/readme.md', readMeContent, (err) =>
     err ? console.log(err) : console.log('Successfully created readme.md file!')
