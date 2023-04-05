@@ -57,7 +57,7 @@ choices: ['MIT', 'Apache', 'ISC', 'None'],
 },
 ];
 
-inquirer.createPromptModule(questions)
+inquirer.prompt(questions)
 .then(answers => {
 
     const markdown = generateMarkdown(answers);
