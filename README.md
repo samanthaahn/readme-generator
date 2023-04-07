@@ -3,6 +3,9 @@
 ## Description
 This is a readme generator! When entering into the terminal prompts will arise that will help you generate the perfect readme! 
 
+## Walkthrough Video 
+https://drive.google.com/file/d/1APoaIS-1sMgsDq0Pzl1mRBvygZxu4bE-/viewLinks to an external site.
+
 ## Installation
 In order to use this repo, you have to install inquirer verision 8.2.4 as well as node.js. 
 
