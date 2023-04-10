@@ -3,6 +3,13 @@
 ## Description
 This is a readme generator! When entering into the terminal prompts will arise that will help you generate the perfect readme! 
 
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
+
 ## Walkthrough Video 
 https://drive.google.com/file/d/1APoaIS-1sMgsDq0Pzl1mRBvygZxu4bE-/viewLinks to an external site.
 
