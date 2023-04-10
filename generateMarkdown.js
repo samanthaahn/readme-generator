@@ -64,6 +64,13 @@ return `# ${data.title}
 
 ${licenseBadge}
 
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
+
 ## Description
 ${data.description}
 
