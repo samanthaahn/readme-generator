@@ -11,7 +11,7 @@ This is a readme generator! When entering into the terminal prompts will arise t
 - [Questions](#questions)
 
 ## Walkthrough Video 
-https://watch.screencastify.com/v/TWJjzCndCQ6WqsNdJLcq to an external site.
+https://drive.google.com/file/d/1c-QsmzKI99cBcprcb_iqWRh232yXQpCB/view to an external site.
 
 ## Installation
 In order to use this repo, you have to install inquirer verision 8.2.4 as well as node.js. 

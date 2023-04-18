@@ -21,7 +21,7 @@ const questions = [
 },
 {
     type: 'input',
-    name: 'Usage',
+    name: 'usage',
     messag: 'Describe the usage features of your project.',
 },
 {
